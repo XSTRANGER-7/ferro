@@ -1,0 +1,655 @@
+{
+ "all_passed": true,
+ "summary": {
+  "official_sample": "3/3",
+  "labeled_cases": "20/20",
+  "note_parsing": "10/10",
+  "guardrails": "18/18",
+  "retrieval": "5/5",
+  "hallucination_audit": "3/3",
+  "contract": "4/4"
+ },
+ "suites": [
+  {
+   "suite": "official_sample",
+   "passed": 3,
+   "total": 3,
+   "ok": true,
+   "cases": [
+    {
+     "id": "Delhi-Jaipur 2024-11-11",
+     "pass": true,
+     "detail": "all graded fields identical"
+    },
+    {
+     "id": "Ahmedabad-Mumbai 2025-01-20",
+     "pass": true,
+     "detail": "all graded fields identical"
+    },
+    {
+     "id": "Mumbai-Pune 2025-09-15",
+     "pass": true,
+     "detail": "all graded fields identical"
+    }
+   ]
+  },
+  {
+   "suite": "labeled_cases",
+   "passed": 20,
+   "total": 20,
+   "ok": true,
+   "cases": [
+    {
+     "id": "L01",
+     "pass": true,
+     "route": "Delhi-Jaipur",
+     "week_of": "2024-11-11",
+     "expected": "Yes",
+     "got": "Yes",
+     "why": "+35% spike, no note for Delhi-Jaipur in Nov 2024 (N007 is May 2024 and says roads improved). Official sample row."
+    },
+    {
+     "id": "L02",
+     "pass": true,
+     "route": "Delhi-Jaipur",
+     "week_of": "2024-11-18",
+     "expected": "Yes",
+     "got": "Yes",
+     "why": "Second week of the same unexplained spike"
+    },
+    {
+     "id": "L03",
+     "pass": true,
+     "route": "Ahmedabad-Mumbai",
+     "week_of": "2025-01-20",
+     "expected": "No (justified) N002",
+     "got": "No (justified) N002",
+     "why": "Festival surcharge note for this corridor and this exact week. Official sample row."
+    },
+    {
+     "id": "L04",
+     "pass": true,
+     "route": "Chennai-Bangalore",
+     "week_of": "2025-02-24",
+     "expected": "No (justified) N001",
+     "got": "No (justified) N001",
+     "why": "Flooding Feb 24 - Mar 8 on this corridor"
+    },
+    {
+     "id": "L05",
+     "pass": true,
+     "route": "Chennai-Bangalore",
+     "week_of": "2025-03-03",
+     "expected": "No (justified) N001",
+     "got": "No (justified) N001",
+     "why": "Week of Mar 3-9 overlaps the flood window (ends Mar 8)"
+    },
+    {
+     "id": "L06",
+     "pass": true,
+     "route": "Chennai-Bangalore",
+     "week_of": "2025-03-10",
+     "expected": "Yes",
+     "got": "Yes",
+     "why": "Still elevated, but N001 says roads passable by Mar 9 - outside the note window"
+    },
+    {
+     "id": "L07",
+     "pass": true,
+     "route": "Chennai-Bangalore",
+     "week_of": "2025-03-17",
+     "expected": "Yes",
+     "got": "Yes",
+     "why": "N009 says conditions returned to normal - it is not a reason for higher cost"
+    },
+    {
+     "id": "L08",
+     "pass": true,
+     "route": "Mumbai-Pune",
+     "week_of": "2025-09-15",
+     "expected": "Yes",
+     "got": "Yes",
+     "why": "Gradual creep: +9% own, +24% vs peers. Official sample row."
+    },
+    {
+     "id": "L09",
+     "pass": true,
+     "route": "Mumbai-Pune",
+     "week_of": "2025-12-08",
+     "expected": "Yes",
+     "got": "Yes",
+     "why": "Creep continues, ~+39% vs Delhi-Jaipur"
+    },
+    {
+     "id": "L10",
+     "pass": true,
+     "route": "Mumbai-Pune",
+     "week_of": "2025-12-22",
+     "expected": "Yes",
+     "got": "Yes",
+     "why": "Creep continues, ~+39% vs Delhi-Jaipur"
+    },
+    {
+     "id": "L11",
+     "pass": true,
+     "route": "Mumbai-Delhi",
+     "week_of": "2024-07-29",
+     "expected": "No",
+     "got": "No",
+     "why": "Decoy N005: maintenance but costs not affected; data shows no rise"
+    },
+    {
+     "id": "L12",
+     "pass": true,
+     "route": "Delhi-Jaipur",
+     "week_of": "2024-05-20",
+     "expected": "No",
+     "got": "No",
+     "why": "Decoy N007: road improvement week; normal cost"
+    },
+    {
+     "id": "L13",
+     "pass": true,
+     "route": "Kolkata-Bhubaneswar",
+     "week_of": "2025-06-09",
+     "expected": "No",
+     "got": "No",
+     "why": "Decoy N008: no disruption; normal cost"
+    },
+    {
+     "id": "L14",
+     "pass": true,
+     "route": "Mumbai-Delhi",
+     "week_of": "2025-05-12",
+     "expected": "No",
+     "got": "No",
+     "why": "Diesel step-up (~+12%) stays under the +15% own-history threshold"
+    },
+    {
+     "id": "L15",
+     "pass": true,
+     "route": "Delhi-Chennai",
+     "week_of": "2025-05-05",
+     "expected": "No",
+     "got": "No",
+     "why": "Diesel week; route did not move"
+    },
+    {
+     "id": "L16",
+     "pass": true,
+     "route": "Ahmedabad-Mumbai",
+     "week_of": "2025-01-27",
+     "expected": "No",
+     "got": "No",
+     "why": "Week after the festival: back to normal"
+    },
+    {
+     "id": "L17",
+     "pass": true,
+     "route": "Chennai-Bangalore",
+     "week_of": "2025-03-24",
+     "expected": "No",
+     "got": "No",
+     "why": "Flood effects over"
+    },
+    {
+     "id": "L18",
+     "pass": true,
+     "route": "Delhi-Jaipur",
+     "week_of": "2024-11-25",
+     "expected": "No",
+     "got": "No",
+     "why": "Spike over"
+    },
+    {
+     "id": "L19",
+     "pass": true,
+     "route": "Mumbai-Pune",
+     "week_of": "2024-01-01",
+     "expected": "No",
+     "got": "No",
+     "why": "First week on record: no history so a rise cannot be shown"
+    },
+    {
+     "id": "L20",
+     "pass": true,
+     "route": "Delhi-Chennai",
+     "week_of": "2025-10-27",
+     "expected": "No",
+     "got": "No",
+     "why": "Decoy N010: mandate absorbed without rate change"
+    }
+   ]
+  },
+  {
+   "suite": "note_parsing",
+   "passed": 10,
+   "total": 10,
+   "ok": true,
+   "cases": [
+    {
+     "id": "N001",
+     "pass": true,
+     "detail": "matches",
+     "why": "flooding, detours, higher trip costs Feb 24 - Mar 8"
+    },
+    {
+     "id": "N002",
+     "pass": true,
+     "detail": "matches",
+     "why": "festival-week surcharge"
+    },
+    {
+     "id": "N003",
+     "pass": true,
+     "detail": "matches",
+     "why": "diesel up, all routes ~5-7%"
+    },
+    {
+     "id": "N004",
+     "pass": true,
+     "detail": "matches",
+     "why": "affected routes are not in this dataset"
+    },
+    {
+     "id": "N005",
+     "pass": true,
+     "detail": "matches",
+     "why": "costs not significantly affected"
+    },
+    {
+     "id": "N006",
+     "pass": true,
+     "detail": "matches",
+     "why": "stable demand, no disruptions"
+    },
+    {
+     "id": "N007",
+     "pass": true,
+     "detail": "matches",
+     "why": "roads improved"
+    },
+    {
+     "id": "N008",
+     "pass": true,
+     "detail": "matches",
+     "why": "no disruptions"
+    },
+    {
+     "id": "N009",
+     "pass": true,
+     "detail": "matches",
+     "why": "returned to normal - end of event"
+    },
+    {
+     "id": "N010",
+     "pass": true,
+     "detail": "matches",
+     "why": "compliance cost absorbed, no rate change"
+    }
+   ]
+  },
+  {
+   "suite": "guardrails",
+   "passed": 18,
+   "total": 18,
+   "ok": true,
+   "cases": [
+    {
+     "id": "G01",
+     "pass": true,
+     "attack": "Right route + right week but note says roads IMPROVED (N007)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G02",
+     "pass": true,
+     "attack": "Right route + right week but note says costs NOT affected (N005)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G03",
+     "pass": true,
+     "attack": "Right route + quarter but note says NO disruptions (N008)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G04",
+     "pass": true,
+     "attack": "All-routes toll note whose routes are outside the dataset (N004)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G05",
+     "pass": true,
+     "attack": "All-routes note reporting stable demand (N006)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G06",
+     "pass": true,
+     "attack": "All-routes mandate absorbed without rate change (N010)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G07",
+     "pass": true,
+     "attack": "Same corridor but note marks the RETURN to normal (N009)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G08",
+     "pass": true,
+     "attack": "Right corridor + right cause but window ended Mar 8 (N001)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G09",
+     "pass": true,
+     "attack": "Right corridor but the festival week was the week before (N002)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G10",
+     "pass": true,
+     "attack": "Right week but wrong corridor for the festival note (N002)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G11",
+     "pass": true,
+     "attack": "Shares a city (Chennai) with the flood corridor but is a different route (N001)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G12",
+     "pass": true,
+     "attack": "Diesel note states 5-7%; a +16% rise is far bigger (N003 magnitude)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G13",
+     "pass": true,
+     "attack": "Diesel hit every route; it cannot explain a gap vs peers (N003)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G14",
+     "pass": true,
+     "attack": "Diesel level shift already absorbed by the 8-week baseline (N003 expired)",
+     "expected": "(none)",
+     "got": "(none)"
+    },
+    {
+     "id": "G15",
+     "pass": true,
+     "attack": "Positive control: rise vs own history fits the diesel note",
+     "expected": "N003",
+     "got": "N003"
+    },
+    {
+     "id": "G16",
+     "pass": true,
+     "attack": "Positive control: flood week",
+     "expected": "N001",
+     "got": "N001"
+    },
+    {
+     "id": "G17",
+     "pass": true,
+     "attack": "Positive control: festival week",
+     "expected": "N002",
+     "got": "N002"
+    },
+    {
+     "id": "G18",
+     "pass": true,
+     "attack": "Positive control: corridor notes cover both directions",
+     "expected": "N001",
+     "got": "N001"
+    }
+   ]
+  },
+  {
+   "suite": "retrieval",
+   "passed": 5,
+   "total": 5,
+   "ok": true,
+   "cases": [
+    {
+     "id": "Ahmedabad-Mumbai 2025-01-20 -> N002",
+     "pass": true,
+     "rank": 1,
+     "top_k": [
+      "N002",
+      "N006",
+      "N003",
+      "N010"
+     ]
+    },
+    {
+     "id": "Bangalore-Chennai 2025-02-24 -> N001",
+     "pass": true,
+     "rank": 1,
+     "top_k": [
+      "N001",
+      "N009",
+      "N006",
+      "N003"
+     ]
+    },
+    {
+     "id": "Chennai-Bangalore 2025-02-24 -> N001",
+     "pass": true,
+     "rank": 1,
+     "top_k": [
+      "N001",
+      "N009",
+      "N006",
+      "N003"
+     ]
+    },
+    {
+     "id": "Chennai-Bangalore 2025-03-03 -> N001",
+     "pass": true,
+     "rank": 1,
+     "top_k": [
+      "N001",
+      "N009",
+      "N006",
+      "N003"
+     ]
+    },
+    {
+     "id": "Mumbai-Delhi 2025-05-12 -> N003",
+     "pass": true,
+     "rank": 1,
+     "top_k": [
+      "N003",
+      "N005",
+      "N008",
+      "N006"
+     ]
+    }
+   ],
+   "recall_at_k": 1.0,
+   "mrr": 1.0,
+   "k": 4
+  },
+  {
+   "suite": "hallucination_audit",
+   "passed": 3,
+   "total": 3,
+   "ok": true,
+   "cases": [
+    {
+     "id": "Ahmedabad-Mumbai 2025-01-20 -> N002",
+     "pass": true,
+     "detail": "route, window and effect all check out"
+    },
+    {
+     "id": "Chennai-Bangalore 2025-02-24 -> N001",
+     "pass": true,
+     "detail": "route, window and effect all check out"
+    },
+    {
+     "id": "Chennai-Bangalore 2025-03-03 -> N001",
+     "pass": true,
+     "detail": "route, window and effect all check out"
+    }
+   ],
+   "fabricated": 0
+  },
+  {
+   "suite": "contract",
+   "passed": 4,
+   "total": 4,
+   "ok": true,
+   "cases": [
+    {
+     "id": "header matches sample exactly",
+     "pass": true,
+     "detail": "['route', 'week_of', 'cost_per_tonne_km', 'vs_own_history', 'vs_similar_routes', 'flagged', 'matched_note_id', 'reason']"
+    },
+    {
+     "id": "every row has valid types/formats",
+     "pass": true,
+     "detail": "728 rows, 0 invalid"
+    },
+    {
+     "id": "every week_of is a Monday",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "id": "one row per route-week",
+     "pass": true,
+     "detail": ""
+    }
+   ]
+  }
+ ],
+ "sensitivity": {
+  "suite": "sensitivity",
+  "grid": [
+   {
+    "own_pct": 10.0,
+    "peer_pct": 15.0,
+    "flagged_yes": 24,
+    "justified": 3,
+    "label_accuracy": "19/20"
+   },
+   {
+    "own_pct": 10.0,
+    "peer_pct": 20.0,
+    "flagged_yes": 17,
+    "justified": 3,
+    "label_accuracy": "19/20"
+   },
+   {
+    "own_pct": 10.0,
+    "peer_pct": 25.0,
+    "flagged_yes": 11,
+    "justified": 3,
+    "label_accuracy": "18/20"
+   },
+   {
+    "own_pct": 12.5,
+    "peer_pct": 15.0,
+    "flagged_yes": 23,
+    "justified": 3,
+    "label_accuracy": "20/20"
+   },
+   {
+    "own_pct": 12.5,
+    "peer_pct": 20.0,
+    "flagged_yes": 16,
+    "justified": 3,
+    "label_accuracy": "20/20"
+   },
+   {
+    "own_pct": 12.5,
+    "peer_pct": 25.0,
+    "flagged_yes": 10,
+    "justified": 3,
+    "label_accuracy": "19/20"
+   },
+   {
+    "own_pct": 15.0,
+    "peer_pct": 15.0,
+    "flagged_yes": 23,
+    "justified": 3,
+    "label_accuracy": "20/20"
+   },
+   {
+    "own_pct": 15.0,
+    "peer_pct": 20.0,
+    "flagged_yes": 16,
+    "justified": 3,
+    "label_accuracy": "20/20"
+   },
+   {
+    "own_pct": 15.0,
+    "peer_pct": 25.0,
+    "flagged_yes": 10,
+    "justified": 3,
+    "label_accuracy": "19/20"
+   },
+   {
+    "own_pct": 17.5,
+    "peer_pct": 15.0,
+    "flagged_yes": 23,
+    "justified": 3,
+    "label_accuracy": "20/20"
+   },
+   {
+    "own_pct": 17.5,
+    "peer_pct": 20.0,
+    "flagged_yes": 16,
+    "justified": 3,
+    "label_accuracy": "20/20"
+   },
+   {
+    "own_pct": 17.5,
+    "peer_pct": 25.0,
+    "flagged_yes": 10,
+    "justified": 3,
+    "label_accuracy": "19/20"
+   },
+   {
+    "own_pct": 20.0,
+    "peer_pct": 15.0,
+    "flagged_yes": 23,
+    "justified": 3,
+    "label_accuracy": "20/20"
+   },
+   {
+    "own_pct": 20.0,
+    "peer_pct": 20.0,
+    "flagged_yes": 16,
+    "justified": 3,
+    "label_accuracy": "20/20"
+   },
+   {
+    "own_pct": 20.0,
+    "peer_pct": 25.0,
+    "flagged_yes": 10,
+    "justified": 3,
+    "label_accuracy": "19/20"
+   }
+  ]
+ }
+}

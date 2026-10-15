@@ -1,0 +1,19 @@
+case_id,route,week_of,own_pct,trigger,expected_note_id,attack
+G01,Delhi-Jaipur,2024-05-20,30,both,,Right route + right week but note says roads IMPROVED (N007)
+G02,Mumbai-Delhi,2024-07-29,30,both,,Right route + right week but note says costs NOT affected (N005)
+G03,Kolkata-Bhubaneswar,2025-06-09,30,both,,Right route + quarter but note says NO disruptions (N008)
+G04,Mumbai-Pune,2024-03-11,30,both,,All-routes toll note whose routes are outside the dataset (N004)
+G05,Mumbai-Pune,2025-09-22,30,both,,All-routes note reporting stable demand (N006)
+G06,Delhi-Jaipur,2025-10-27,30,both,,All-routes mandate absorbed without rate change (N010)
+G07,Chennai-Bangalore,2025-03-17,30,both,,Same corridor but note marks the RETURN to normal (N009)
+G08,Chennai-Bangalore,2025-03-10,25,both,,Right corridor + right cause but window ended Mar 8 (N001)
+G09,Ahmedabad-Mumbai,2025-01-27,25,both,,Right corridor but the festival week was the week before (N002)
+G10,Kolkata-Bhubaneswar,2025-01-20,25,both,,Right week but wrong corridor for the festival note (N002)
+G11,Delhi-Chennai,2025-02-24,25,both,,Shares a city (Chennai) with the flood corridor but is a different route (N001)
+G12,Mumbai-Delhi,2025-05-12,16,own,,Diesel note states 5-7%; a +16% rise is far bigger (N003 magnitude)
+G13,Mumbai-Pune,2025-05-05,8,peer,,Diesel hit every route; it cannot explain a gap vs peers (N003)
+G14,Mumbai-Delhi,2025-07-07,9,own,,Diesel level shift already absorbed by the 8-week baseline (N003 expired)
+G15,Mumbai-Delhi,2025-05-12,9,own,N003,Positive control: rise vs own history fits the diesel note
+G16,Chennai-Bangalore,2025-03-03,22,both,N001,Positive control: flood week
+G17,Ahmedabad-Mumbai,2025-01-20,29,both,N002,Positive control: festival week
+G18,Bangalore-Chennai,2025-02-24,25,both,N001,Positive control: corridor notes cover both directions

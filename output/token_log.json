@@ -1,0 +1,192 @@
+{
+  "llm_enabled": false,
+  "model": "llama-3.1-8b-instant",
+  "base_url": "https://api.groq.com/openai/v1",
+  "temperature": 0.0,
+  "seed": 7,
+  "pricing_usd_per_1m": {
+    "input": 0.05,
+    "output": 0.08
+  },
+  "billable_api_calls": {
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0
+  },
+  "served_from_cache": {
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0
+  },
+  "fell_back_to_template": {
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0
+  },
+  "projected_if_llm_enabled": {
+    "calls": 19,
+    "input_tokens": 4744,
+    "output_tokens": 1520,
+    "cost_usd": 0.000359
+  },
+  "calls_by_purpose": {
+    "explain_flag": 19
+  },
+  "entries": [
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 236,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 233,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 233,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 217,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 250,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 240,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 232,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 243,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 259,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 260,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 260,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 261,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 260,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 260,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 260,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 260,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 260,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 260,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    },
+    {
+      "purpose": "explain_flag",
+      "status": "dry_run",
+      "input_tokens": 260,
+      "output_tokens": 80,
+      "latency_ms": 0,
+      "note": "LLM disabled; estimated"
+    }
+  ]
+}

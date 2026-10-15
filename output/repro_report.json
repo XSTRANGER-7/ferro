@@ -1,0 +1,67 @@
+{
+  "runs": 3,
+  "files": {
+    "results.csv": {
+      "identical": true,
+      "sha256": [
+        "9fef1c622f0d44081670df3888f3779115c5135bdb7908f6906b50afdd10b10a"
+      ]
+    },
+    "flagged_results.csv": {
+      "identical": true,
+      "sha256": [
+        "d0d61f0aceb876b7b919577c4109ac794c9fdfb7e17ffa27c415b2af6775746b"
+      ]
+    },
+    "run.json": {
+      "identical": true,
+      "sha256": [
+        "48f0002051c213bda4c8b6716fbbd40e905b7255cad67741e3e5a91db9fb59f6"
+      ]
+    }
+  },
+  "graded_field_diffs": 0,
+  "reason_text_diffs": 0,
+  "per_run": [
+    {
+      "run": "run_1",
+      "rows": 728,
+      "flag_counts": {
+        "Yes": 16,
+        "No (justified)": 3,
+        "No": 709
+      },
+      "results_sha256": "9fef1c622f0d44081670df3888f3779115c5135bdb7908f6906b50afdd10b10a",
+      "run_json_sha256": "48f0002051c213bda4c8b6716fbbd40e905b7255cad67741e3e5a91db9fb59f6",
+      "llm_api_calls": 0,
+      "llm_cache_hits": 0
+    },
+    {
+      "run": "run_2",
+      "rows": 728,
+      "flag_counts": {
+        "Yes": 16,
+        "No (justified)": 3,
+        "No": 709
+      },
+      "results_sha256": "9fef1c622f0d44081670df3888f3779115c5135bdb7908f6906b50afdd10b10a",
+      "run_json_sha256": "48f0002051c213bda4c8b6716fbbd40e905b7255cad67741e3e5a91db9fb59f6",
+      "llm_api_calls": 0,
+      "llm_cache_hits": 0
+    },
+    {
+      "run": "run_3",
+      "rows": 728,
+      "flag_counts": {
+        "Yes": 16,
+        "No (justified)": 3,
+        "No": 709
+      },
+      "results_sha256": "9fef1c622f0d44081670df3888f3779115c5135bdb7908f6906b50afdd10b10a",
+      "run_json_sha256": "48f0002051c213bda4c8b6716fbbd40e905b7255cad67741e3e5a91db9fb59f6",
+      "llm_api_calls": 0,
+      "llm_cache_hits": 0
+    }
+  ],
+  "identical": true
+}

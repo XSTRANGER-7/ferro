@@ -1,0 +1,21 @@
+case_id,route,week_of,expected_flagged,expected_note_id,why_this_label
+L01,Delhi-Jaipur,2024-11-11,Yes,,"+35% spike, no note for Delhi-Jaipur in Nov 2024 (N007 is May 2024 and says roads improved). Official sample row."
+L02,Delhi-Jaipur,2024-11-18,Yes,,Second week of the same unexplained spike
+L03,Ahmedabad-Mumbai,2025-01-20,No (justified),N002,Festival surcharge note for this corridor and this exact week. Official sample row.
+L04,Chennai-Bangalore,2025-02-24,No (justified),N001,Flooding Feb 24 - Mar 8 on this corridor
+L05,Chennai-Bangalore,2025-03-03,No (justified),N001,Week of Mar 3-9 overlaps the flood window (ends Mar 8)
+L06,Chennai-Bangalore,2025-03-10,Yes,,"Still elevated, but N001 says roads passable by Mar 9 - outside the note window"
+L07,Chennai-Bangalore,2025-03-17,Yes,,N009 says conditions returned to normal - it is not a reason for higher cost
+L08,Mumbai-Pune,2025-09-15,Yes,,"Gradual creep: +9% own, +24% vs peers. Official sample row."
+L09,Mumbai-Pune,2025-12-08,Yes,,"Creep continues, ~+39% vs Delhi-Jaipur"
+L10,Mumbai-Pune,2025-12-22,Yes,,"Creep continues, ~+39% vs Delhi-Jaipur"
+L11,Mumbai-Delhi,2024-07-29,No,,Decoy N005: maintenance but costs not affected; data shows no rise
+L12,Delhi-Jaipur,2024-05-20,No,,Decoy N007: road improvement week; normal cost
+L13,Kolkata-Bhubaneswar,2025-06-09,No,,Decoy N008: no disruption; normal cost
+L14,Mumbai-Delhi,2025-05-12,No,,Diesel step-up (~+12%) stays under the +15% own-history threshold
+L15,Delhi-Chennai,2025-05-05,No,,Diesel week; route did not move
+L16,Ahmedabad-Mumbai,2025-01-27,No,,Week after the festival: back to normal
+L17,Chennai-Bangalore,2025-03-24,No,,Flood effects over
+L18,Delhi-Jaipur,2024-11-25,No,,Spike over
+L19,Mumbai-Pune,2024-01-01,No,,First week on record: no history so a rise cannot be shown
+L20,Delhi-Chennai,2025-10-27,No,,Decoy N010: mandate absorbed without rate change

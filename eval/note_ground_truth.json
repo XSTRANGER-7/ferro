@@ -1,0 +1,13 @@
+{
+  "_comment": "Hand-written reading of each note, made independently of notes.py. Used to (1) test the note parser and (2) audit every 'justified' output row. window_end null = open-ended (we accept the level-shift window).",
+  "N001": {"corridor": ["Chennai", "Bangalore"], "window_start": "2025-02-24", "window_end": "2025-03-08", "can_justify": true,  "why": "flooding, detours, higher trip costs Feb 24 - Mar 8"},
+  "N002": {"corridor": ["Ahmedabad", "Mumbai"],  "window_start": "2025-01-20", "window_end": "2025-01-26", "can_justify": true,  "why": "festival-week surcharge"},
+  "N003": {"corridor": "ALL",                     "window_start": "2025-05-05", "window_end": null,         "can_justify": true,  "why": "diesel up, all routes ~5-7%", "magnitude": [5, 7]},
+  "N004": {"corridor": "NONE",                    "window_start": "2024-03-11", "window_end": "2024-03-17", "can_justify": false, "why": "affected routes are not in this dataset"},
+  "N005": {"corridor": ["Mumbai", "Delhi"],       "window_start": "2024-07-29", "window_end": "2024-08-04", "can_justify": false, "why": "costs not significantly affected"},
+  "N006": {"corridor": "ALL",                     "window_start": "2025-07-01", "window_end": "2025-09-30", "can_justify": false, "why": "stable demand, no disruptions"},
+  "N007": {"corridor": ["Delhi", "Jaipur"],       "window_start": "2024-05-20", "window_end": "2024-05-26", "can_justify": false, "why": "roads improved"},
+  "N008": {"corridor": ["Kolkata", "Bhubaneswar"],"window_start": "2025-04-01", "window_end": "2025-06-30", "can_justify": false, "why": "no disruptions"},
+  "N009": {"corridor": ["Chennai", "Bangalore"],  "window_start": "2025-03-17", "window_end": "2025-03-23", "can_justify": false, "why": "returned to normal - end of event"},
+  "N010": {"corridor": "ALL",                     "window_start": "2025-10-27", "window_end": "2025-11-02", "can_justify": false, "why": "compliance cost absorbed, no rate change"}
+}

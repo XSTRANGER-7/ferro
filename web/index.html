@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ferro</title>
+  <meta name="description" content="Freight cost watchdog: flags unjustified cost rises and cites its evidence.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%232a78d6'/><stop offset='1' stop-color='%236250d6'/></linearGradient></defs><rect width='32' height='32' rx='9' fill='url(%23g)'/><path d='M7 21l6-7 5 4 7-9' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <link rel="stylesheet" href="css/app.css">
+  <script>
+    try { const t = localStorage.getItem("ferro-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="/" title="Ferro home" style="text-decoration:none;color:inherit">
+      <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-7 5 4 7-9"/></svg></div>
+      <div>
+        <div class="brand-name">Ferro</div>
+        <div class="brand-sub">Cost watchdog for freight lanes</div>
+      </div>
+    </a>
+    <button class="kbd-btn" id="open-palette" type="button">
+      <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <span>Search anything…</span><span class="spacer"></span><kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <nav class="nav" id="nav"></nav>
+    <div class="side-foot">
+      <div class="theme-switch" id="theme-switch" role="group" aria-label="Theme">
+        <button data-t="light" title="Light"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+        <button data-t="auto" title="Match system"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button>
+        <button data-t="dark" title="Dark"><svg class="ic" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+      </div>
+      <div class="run-meta" id="run-meta">Loading run…</div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Menu"><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <div class="crumbs" id="crumbs"></div>
+      <span class="spacer"></span>
+      <span class="badge info" id="llm-badge">—</span>
+      <button class="icon-btn" id="help-btn" title="Keyboard shortcuts (?)" aria-label="Help"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"/></svg></button>
+    </header>
+    <main class="view" id="view">
+      <div class="skel" style="height:150px;margin-bottom:18px"></div>
+      <div class="kpis"><div class="skel" style="height:110px"></div><div class="skel" style="height:110px"></div><div class="skel" style="height:110px"></div><div class="skel" style="height:110px"></div></div>
+      <div class="skel" style="height:300px"></div>
+    </main>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-head"><div id="drawer-title" style="flex:1"></div><button class="icon-btn" id="drawer-close" aria-label="Close"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
+<div class="palette" id="palette" role="dialog" aria-label="Command palette">
+  <div class="palette-input"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="palette-input" placeholder="Jump to a page, route, flagged week, note… or type a question" autocomplete="off"><kbd>Esc</kbd></div>
+  <div class="palette-list" id="palette-list"></div>
+</div>
+<div class="toasts" id="toasts"></div>
+<div class="tooltip" id="tooltip" role="tooltip"></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
